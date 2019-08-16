@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'szabot media manager';
+  title = 'Szabot Media Manager';
   id = 'csN0vkS8_cI';
   playerVars = {
     cc_lang_pref: 'en'
