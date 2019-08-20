@@ -22,5 +22,3 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
