@@ -36,15 +36,23 @@ export class AppComponent {
   }
   onStateChange(event) {
     console.log('player state', event.data);
+    if (event.data === YT.PlayerState.ENDED) {
+      moveItemInArray(this.videos, 1, 0);
+      moveItemInArray(this.videoIds, 1, 0);
+      if (this.videoIds[0] !== this.id) {
+        this.id = this.videoIds[0];
+        this.player.loadVideoById(this.id);
+      }
+      this.videos.splice(1, 1);
+      this.videoIds.splice(1, 1);
+    }
   }
-  
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.videos, event.previousIndex, event.currentIndex);
     moveItemInArray(this.videoIds, event.previousIndex, event.currentIndex);
     if (this.videoIds[0] != this.id) {
       this.id = this.videoIds[0];
       this.player.loadVideoById(this.id);
-      
     }
   }
 }
