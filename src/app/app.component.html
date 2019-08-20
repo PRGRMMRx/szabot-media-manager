@@ -10,15 +10,20 @@
     &nbsp;
     <i style="color:yellow; animation-direction: reverse" class="fa fa-lg fa-exclamation-triangle ld ld-fade"></i>
   </h2>
-  <br /><br />
+</div>
+<div class="left-half">
   <youtube-player
     [videoId]="id"
     (ready)="savePlayer($event)"
     (change)="onStateChange($event)"
     [playerVars]="playerVars"
-    height=480px
-    width=640px>
+    height=100%
+    width=100%>
   </youtube-player>
 </div>
-
+<div class="right-half">
+  <div cdkDropList class="video-list" (cdkDropListDropped)="drop($event)">
+    <div class="video-box" *ngFor="let video of videos" cdkDrag>{{video}}</div>
+  </div>
+</div>
 <router-outlet></router-outlet>
