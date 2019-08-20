@@ -7,6 +7,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   videos = [
     'MattGaddy\'s Stream Space',
     'The Midnight - Jason',
@@ -14,6 +15,7 @@ export class AppComponent {
     'The Midnight - Light Years',
     'The Midnight - Crystalline'
   ];
+
   videoIds = [
     'csN0vkS8_cI',
     'KWoWSXzmDto',
@@ -23,7 +25,10 @@ export class AppComponent {
   ];
   title = 'Szabot Media Manager';
   player: YT.Player;
-  private id: string = this.videoIds[0];
+  id: string = this.videoIds[0];
+  playerVars = {
+    cc_lang_pref: 'en'
+  };
  
   savePlayer(player) {
     this.player = player;
